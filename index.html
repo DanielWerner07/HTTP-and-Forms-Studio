@@ -3,9 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<script>
+		function setSearchEngine() {
+			console.log("test2");
+			let engine = document.querySelector("input[name=engine]:checked").value;
+			console.log(engine);
+		};
 		// TODO: create a handler
     window.addEventListener("load", function(){
-        // TODO: register the handler
+		document.addEventListener("submit", function(){
+			onsubmit=setSearchEngine()	
+			console.log("test");
+		});
+
     });
 	</script>
 </head>
@@ -14,13 +23,13 @@
 
 	<form id="searchForm">
 		<input type="text" name="q"><br>
-		<input type="radio" name="engine" id="google">
+		<input type="radio" name="engine" id="google" value="google">
 		<label for="google">Google</label><br>
-		<input type="radio" name="engine" id="duckduckgo">
+		<input type="radio" name="engine" id="duckduckgo" value="duckduckgo">
 		<label for="duckduckgo">DuckDuckGo</label><br>
-		<input type="radio" name="engine" id="bing">
+		<input type="radio" name="engine" id="bing" value="bing">
 		<label for="bing">Bing</label><br>
-		<input type="radio" name="engine" id="ask">
+		<input type="radio" name="engine" id="ask" value="ask">
 		<label for="ask">Ask</label><br>
 		<input type="submit" name="submit" value="Go!">
 	</form>
